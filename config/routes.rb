@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 resources :meets, except: [:edit, :update]
 namespace :admin do
     resources :meets
-    resources :my, except: [:index]
+    resources :me, except: [:index]
   end
 
   devise_for :users
