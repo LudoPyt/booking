@@ -1,0 +1,17 @@
+<div class="text-center">
+  <h1>Calendrier</h1>
+</div>
+<div class="container">
+  <div class="row">
+      <% @meets.each do |meet| %>
+        <div class="col-12">
+          <div class="shadow bg-white rounded p-4 d-flex justify-content-between">
+            <%= link_to meet_path(meet.id) do %>
+            <h2><%= meet.date %></h2>
+              <p><b><<%= @user= current_user.last_name %></b></p>
+            </div>
+          </div>
+        <% end %>
+          <% end %>
+    </div>
+</div>
