@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :meets
+  has_many :meets, dependent: :destroy
   validates :first_name, :last_name, presence:true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

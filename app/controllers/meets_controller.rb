@@ -1,6 +1,6 @@
 class MeetsController < ApplicationController
   def index
-    @user = current_user.last_name
+    @user = current_user
     @meets = Meet.all
 
   end
@@ -24,15 +24,15 @@ class MeetsController < ApplicationController
   end
 
   def destroy
-    @meet = Meet.find(params[:user_id])
+    @meet = Meet.find(params[:id])
     @meet.destroy
-    redirect_to meet_path
+    redirect_to meets_path
   end
 
   private
 
   def meet_params
-    params.require(:meet).permit(:date, :user_id)
+    params.require(:meet).permit(:date)
   end
 
 end
