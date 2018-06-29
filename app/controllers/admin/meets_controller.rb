@@ -14,8 +14,11 @@ class Admin::MeetsController < ApplicationController
 
   def create
     @meet = Meet.new(meet_params)
-    @meet.save
-    redirect_to meet_path
+    @meet.user = current_user
+    if @meet.save
+      render 'show'
+    else
+      render 'new'
   end
 
   def edit
@@ -23,7 +26,7 @@ class Admin::MeetsController < ApplicationController
   end
 
   def update
-    @meet = Meet.new(meet_params)
+    @meet = Meet.find(params[:id])
     @meet.update(meet_params)
     redirect_to meet_path
   end
@@ -31,7 +34,7 @@ class Admin::MeetsController < ApplicationController
   def destroy
     @meet = Meet.find(params[:id])
     @meet.destroy
-    redirect_to meet_path
+    redirect_to meets_path
   end
 
   private

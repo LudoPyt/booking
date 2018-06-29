@@ -1,7 +1,10 @@
-<div class="container shadow bg-white rounded p-4 text-center my-5 mb-4">
-<h1><%= @meet.date %></h1>
+<div class="container">
+  <%= link_to "Prendre un autre rdv", new_meet_path, class: "btn btn-primary" %>
+  <div class="container shadow bg-white rounded p-4 text-center my-5 mb-4">
+    <h1><%= @meet.date %></h1>
 
-<%= link_to "Annuler", meet_path(@meet.id), method: :delete, class: "btn
-btn-danger" %>
+    <%= link_to "Annuler", meet_path(@meet.id), method: :delete, class: "btn
+    btn-danger", data: { confirm: 'Souhaitez vous vraiment annuler?' } %>
+  </div>
 
 </div>

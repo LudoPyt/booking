@@ -2,16 +2,18 @@
   <h1>Calendrier</h1>
 </div>
 <div class="container">
-  <div class="row">
+  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center" %>
+
+
       <% @meets.each do |meet| %>
+      <%= link_to meet_path(meet.id) do %>
         <div class="col-12">
-          <div class="shadow bg-white rounded p-4 d-flex justify-content-between">
-            <%= link_to meet_path(meet.id) do %>
-            <h2><%= meet.date %></h2>
-              <p><b><<%= @user= current_user.last_name %></b></p>
+          <div class="shadow bg-white rounded p-6 m-6 ">
+            <h2 class="text-center"><%= meet.date %></h2>
+            <p class="text-center"><%= meet.user.first_name%>  <%= meet.user.last_name%></p>
             </div>
           </div>
-        <% end %>
           <% end %>
-    </div>
+        <% end %>
+
 </div>
