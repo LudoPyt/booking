@@ -1,2 +1,7 @@
-<h1>Me#edit</h1>
-<p>Find me in app/views/me/edit.html.erb</p>
+<h1>Create a New meet</h1>
+  <%= simple_form_for @meet do |f| %>
+
+    <%= f.input :date%>
+    <%= f.button :submit %>
+
+  <% end %>

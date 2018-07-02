@@ -20,7 +20,8 @@ before_action :require_admin
       render 'show'
     else
       render 'new'
-  end
+    end
+  end 
 
   def edit
     @meet = Meet.find(params[:id])
@@ -45,7 +46,8 @@ before_action :require_admin
   end
 
   def require_admin
-  unless current_user.admin?
+    unless current_user.admin?
     redirect_to meets_path
+    end
   end
 end

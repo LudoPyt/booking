@@ -1,2 +1,19 @@
-<h1>Meets#index</h1>
-<p>Find me in app/views/meets/index.html.erb</p>
+<div class="text-center">
+  <h1>Calendrier</h1>
+</div>
+<div class="container">
+  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center" %>
+
+
+      <% @meets.each do |meet| %>
+      <%= link_to meet_path(meet.id) do %>
+        <div class="col-12">
+          <div class="shadow bg-white rounded p-6 m-6 ">
+            <h2 class="text-center"><%= meet.date %></h2>
+            <p class="text-center"><%= meet.user.first_name%>  <%= meet.user.last_name%></p>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+
+</div>
