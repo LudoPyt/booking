@@ -4,15 +4,15 @@
 <div class="container">
   <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center" %>
 
-
       <% @meets.each do |meet| %>
-      <%= link_to meet_path(meet.id) do %>
         <div class="col-12">
           <div class="shadow bg-white rounded p-6 m-6 ">
             <h2 class="text-center"><%= meet.date %></h2>
-            </div>
-          </div>
-          <% end %>
-        <% end %>
 
-</div>
+              <% if meet.user == current_user %>
+              <%= link_to "Details", meet_path(meet.id), class: "btn btn-primary text-center" %>
+              <% end %>
+          
+          </div>
+        </div>
+        <% end %>

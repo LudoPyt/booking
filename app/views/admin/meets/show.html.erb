@@ -1,7 +1,10 @@
-<h1>Create a New meet</h1>
-  <%= simple_form_for @meet do |f| %>
+<div class="container">
 
-    <%= f.input :date%>
-    <%= f.button :submit %>
+  <div class="container shadow bg-white rounded p-4 text-center my-5 mb-4">
+    <h1><%= @meet.date %></h1>
 
-  <% end %>
+    <%= link_to "Annuler", admin_meet_path(@meet.id), method: :delete, class: "btn
+    btn-danger", data: { confirm: 'Souhaitez vous vraiment annuler?' } %>
+  </div>
+
+</div>
