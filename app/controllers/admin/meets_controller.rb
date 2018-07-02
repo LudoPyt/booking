@@ -1,4 +1,5 @@
 class Admin::MeetsController < ApplicationController
+before_action :require_admin
 
   def index
     @meets = Meet.all
@@ -41,5 +42,10 @@ class Admin::MeetsController < ApplicationController
 
   def meet_params
     params.require(:meet).permit(:date)
+  end
+
+  def require_admin
+  unless current_user.admin?
+    redirect_to meets_path
   end
 end

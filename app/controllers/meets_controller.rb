@@ -1,8 +1,14 @@
 class MeetsController < ApplicationController
+
+
   def index
     @user = current_user
     @meets = Meet.all
 
+  end
+
+  def my_bookings
+  @meets = current_user.meets
   end
 
   def show
@@ -17,7 +23,7 @@ class MeetsController < ApplicationController
     @meet = Meet.new(meet_params)
     @meet.user = current_user
     if @meet.save
-      render 'show'
+      redirect_to my_bookings_path
     else
       render 'new'
    end
@@ -26,7 +32,7 @@ class MeetsController < ApplicationController
   def destroy
     @meet = Meet.find(params[:id])
     @meet.destroy
-    redirect_to meets_path
+    redirect_to my_bookings_path
   end
 
   private
