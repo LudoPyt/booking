@@ -2,7 +2,6 @@ class MeetsController < ApplicationController
 
 
   def index
-    @user = current_user
     @meets = Meet.all
 
   end

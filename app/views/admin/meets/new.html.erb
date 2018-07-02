@@ -1,9 +1,7 @@
 <h1>Create a New meet</h1>
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :date %>
+  <%= simple_form_for @meet do |f| %>
+
+    <%= f.input :date%>
     <%= f.button :submit %>
-    <% end %>
+
   <% end %>
