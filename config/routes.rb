@@ -1,20 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'me/show'
-  get 'me/new'
-  get 'me/create'
-  get 'me/edit'
-  get 'me/update'
-  get 'me/destroy'
-  get 'meets/index'
-  get 'meets/show'
-  get 'meets/new'
 resources :meets, except: [:edit, :update]
 
 namespace :admin do
     resources :meets
     resources :me, except: [:index]
   end
+
+  get 'my_bookings' => 'meets#my_bookings', as: :my_bookings
 
   devise_for :users
 
