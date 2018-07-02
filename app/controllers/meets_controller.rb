@@ -37,7 +37,7 @@ class MeetsController < ApplicationController
   private
 
   def meet_params
-    params.require(:meet).permit(:date)
+    params.require(:meet).permit(:date, :first_name, :last_name)
   end
 
 end
