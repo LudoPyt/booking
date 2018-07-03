@@ -4,7 +4,7 @@ resources :meets, except: [:edit, :update]
 
 namespace :admin do
     resources :meets
-    resources :me, except: [:index]
+    resources :my_unavailabilities, except: [:index]
   end
 
   get 'my_bookings' => 'meets#my_bookings', as: :my_bookings

@@ -7,6 +7,7 @@ before_action :require_admin
 
   def show
     @meet = Meet.find(params[:id])
+    
   end
 
   def new
@@ -17,11 +18,11 @@ before_action :require_admin
     @meet = Meet.new(meet_params)
     @meet.user = current_user
     if @meet.save
-      render 'show'
+      redirect_to admin_meets_path
     else
-      render 'new'
+      render :new
     end
-  end 
+  end
 
   def edit
     @meet = Meet.find(params[:id])
@@ -30,19 +31,19 @@ before_action :require_admin
   def update
     @meet = Meet.find(params[:id])
     @meet.update(meet_params)
-    redirect_to meet_path
+    redirect_to admin_meet_path
   end
 
   def destroy
     @meet = Meet.find(params[:id])
     @meet.destroy
-    redirect_to meets_path
+    redirect_to admin_meets_path
   end
 
   private
 
   def meet_params
-    params.require(:meet).permit(:date)
+    params.require(:meet).permit(:date, :first_name, :last_name)
   end
 
   def require_admin
