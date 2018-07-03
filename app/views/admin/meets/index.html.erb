@@ -3,6 +3,7 @@
 </div>
 <div class="container">
   <%= link_to "Prendre un rdv", new_admin_meet_path, class: "btn btn-primary text-center" %>
+  <%= link_to "Mes indisponibilités", admin_my_unavailabilities_path, class: "btn btn-warning text-center" %>
 
 
       <% @meets.each do |meet| %>

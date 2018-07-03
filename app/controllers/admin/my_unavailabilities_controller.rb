@@ -1,4 +1,9 @@
-class Admin::My_unavailabilitiesController < ApplicationController
+class Admin::MyUnavailabilitiesController < ApplicationController
+before_action :require_admin
+
+  def index
+    @meets = Meet.all
+  end
 
   def show
     @meet = Meet.find(params[:id])
@@ -10,8 +15,12 @@ class Admin::My_unavailabilitiesController < ApplicationController
 
   def create
     @meet = Meet.new(meet_params)
-    @meet.save
-    redirect_to meet_path
+    if @meet.save
+      redirect_to admin_my_unavailabilities_path
+    else
+      render :new
+    end
+
   end
 
   def edit
@@ -21,12 +30,24 @@ class Admin::My_unavailabilitiesController < ApplicationController
   def update
     @meet = Meet.new(meet_params)
     @meet.update(meet_params)
-    redirect_to meet_path
+    redirect_to admin_my_unavailability_path
   end
 
   def destroy
     @meet = Meet.find(params[:id])
     @meet.destroy
-    redirect_to meet_path
+    redirect_to admin_my_unavailabilities_path
+  end
+
+  private
+
+  def meet_params
+    params.require(:meet).permit(:date)
+  end
+
+  def require_admin
+    unless current_user.admin?
+    redirect_to meets_path
+    end
   end
 end
