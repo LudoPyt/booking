@@ -1,4 +1,4 @@
-class Admin::MeController < ApplicationController
+class Admin::My_unavailabilitiesController < ApplicationController
 
   def show
     @meet = Meet.find(params[:id])

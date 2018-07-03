@@ -10,13 +10,13 @@
         <div class="col-12">
           <div class="shadow bg-white rounded p-6 m-6 ">
             <h2 class="text-center"><%= meet.date %></h2>
-            <p class="text-center">
-              <% if current_user.first_name != meet.first_name && current_user.last_name != meet.last_name %>
-                <%= meet.first_name %> <%= meet.last_name %>
-              <% else %>
-                <%= user.first_name %> <%= meet.user.last_name %>
-              <% end %>
-            </p>
+              <h3 class="text-center">
+                <% if current_user.first_name == meet.user.first_name && current_user.last_name == meet.user.last_name %>
+                  <%= meet.first_name %> <%= meet.last_name %>
+                <% else %>
+                  <%= meet.user.first_name %> <%= meet.user.last_name %>
+                <% end %>
+              </h3>
             </div>
           </div>
           <% end %>

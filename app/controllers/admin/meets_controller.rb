@@ -7,6 +7,7 @@ before_action :require_admin
 
   def show
     @meet = Meet.find(params[:id])
+    
   end
 
   def new
