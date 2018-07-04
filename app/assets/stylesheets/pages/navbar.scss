@@ -30,7 +30,7 @@ nav{
 nav ul li{
   display:inline-block;
   list-style:none;
-  width:400px;
+  width:535px;
   text-align:center;
   font-family:Helvetica, sans-serif;
   border: 1px dashed rgba(255,255,255, 0);
@@ -48,7 +48,7 @@ nav ul{
   position:fixed;
   width:100%;
   padding:0;
-  right: 5px;
+  left: -0.5px;
   top: 50px;
   z-index:100;
 }

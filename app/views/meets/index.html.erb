@@ -2,7 +2,7 @@
   <h1>Calendrier</h1>
 </div>
 <container>
-  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center" %>
+  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center", id: "prendre" %>
 
       <% @meets.each do |meet| %>
         <div class="button" id="button_all">
