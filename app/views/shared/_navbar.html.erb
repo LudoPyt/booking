@@ -1,8 +1,19 @@
-<div class="d-flex justify-content-between align-items-center px-4 py-2 border-bottom">
-  <%= link_to (image_tag "logo.png", height: 50), root_path %>
-  <% if user_signed_in? %>
-    <%= link_to t(".sign_out", default: "Log out"), destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path %>
-  <% end %>
+<div id="bg">
+<section>
+  <nav>
+    <ul>
+      <li data-xcoord="0px" class="active">Calendrier</li>
+      <li data-xcoord="300px">Mes Rendez-vous</li>
+      <li data-xcoord="300px">
+          <% if user_signed_in? %>
+          <%= link_to t(".sign_out", default: "Déconnecter"), destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to t(".sign_in", default: "Se Connecter"), new_user_session_path %>
+        <% end %>
+    </li>
+
+
+    </ul>
+  </nav>
+</section>
 </div>
