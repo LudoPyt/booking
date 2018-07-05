@@ -1,19 +1,26 @@
-<div class="container">
 
-  <div class="container shadow bg-white rounded p-4 text-center my-5 mb-4">
+<div class="corps">
 
-    <h1><%= @meet.date %></h1>
-    <h2>
-      <% if current_user.first_name == @meet.user.first_name && current_user.last_name == @meet.user.last_name %>
-        <%= @meet.first_name %> <%= @meet.last_name %>
-      <% else %>
-        <%= @meet.user.first_name %> <%= @meet.user.last_name %>
-      <% end %>
-    </h2>
-    
-
-    <%= link_to "Annuler", admin_meet_path(@meet.id), method: :delete, class: "btn
-    btn-danger", data: { confirm: 'Souhaitez vous vraiment annuler?' } %>
+  <div class="text-center">
+    <h1>Mon rendez-vous du</h1>
   </div>
+  <container>
 
+    <div class="button">
+      <h2>
+        <% if current_user.first_name == @meet.user.first_name && current_user.last_name == @meet.user.last_name %>
+          <%= @meet.first_name %> <%= @meet.last_name %>
+        <% else %>
+          <%= @meet.user.first_name %> <%= @meet.user.last_name %>
+        <% end %>
+      </h2>
+      <h3><%= @meet.date %></h3>
+      <%= link_to "Annuler", admin_meet_path(@meet.id), method: :delete, class: "btn
+      btn-danger", id: "annuler", data: { confirm: 'Souhaitez vous vraiment annuler?' } %>
+      <%= link_to "Modifier", edit_admin_meet_path(@meet.id), class: "btn
+      btn-primary", id: "prendre", data: { confirm: 'Souhaitez vous vraiment modifier?' } %>
+    </div>
+
+
+  </container>
 </div>

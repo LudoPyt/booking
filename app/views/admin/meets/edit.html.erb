@@ -1,10 +1,13 @@
-<h1>Edit a meet</h1>
-  <%= simple_form_for @meet do |f| %>
+<div class="corps">
+  <container>
+    <h1>Modifier un Rendez-vous</h1>
+      <%= simple_form_for @meet, url: admin_meets_path do |f| %>
 
-  <%= f.input :first_name%>
-  <%= f.input :last_name%>
-  <%= f.input :date%>
-  <%= f.button :submit %>
+        <%= f.input :first_name%>
+        <%= f.input :last_name%>
+        <%= f.input :date%>
+        <%= f.button :submit %>
 
-
-  <% end %>
+      <% end %>
+    </container>
+</div>

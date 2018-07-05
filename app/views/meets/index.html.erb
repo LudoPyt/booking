@@ -2,19 +2,18 @@
   <h1>Calendrier</h1>
 </div>
 <container>
-<<<<<<< Updated upstream
-  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center", id: "prendre" %>
-=======
-  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center",id:"prendre" %>
->>>>>>> Stashed changes
 
-      <% @meets.each do |meet| %>
-        <div class="button" id="button_all">
+  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center", id: "prendre" %>
+
+
+
+    <!-- <% @meets.each do |meet| %>
+         <div class="button" id="button_all">
             <h2 class="text-center"><%= meet.date %></h2>
 
               <% if meet.user == current_user %>
               <%= link_to "Details", meet_path(meet.id), class: "btn btn-primary text-center" %>
               <% end %>
           </div>
-        <% end %>
+        <% end %> -->
   </container>

@@ -2,12 +2,15 @@ class Admin::MeetsController < ApplicationController
 before_action :require_admin
 
   def index
+  end
+
+  def my_bookings
     @meets = Meet.all
   end
 
   def show
     @meet = Meet.find(params[:id])
-    
+
   end
 
   def new
@@ -18,7 +21,7 @@ before_action :require_admin
     @meet = Meet.new(meet_params)
     @meet.user = current_user
     if @meet.save
-      redirect_to admin_meets_path
+      redirect_to admin_my_bookings_path
     else
       render :new
     end
@@ -37,7 +40,7 @@ before_action :require_admin
   def destroy
     @meet = Meet.find(params[:id])
     @meet.destroy
-    redirect_to admin_meets_path
+    redirect_to admin_my_bookings_path
   end
 
   private
