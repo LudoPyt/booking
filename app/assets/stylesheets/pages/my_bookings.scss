@@ -77,10 +77,28 @@ container {
 }
 #annuler:hover {
 	background: lighten(#F5A431, 15);
-	color: #fff;
+	color: #D5323A;
+	font-weight: bold;
 	box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.4);
 	transform: scale(1.15);
 	border-radius: 30px;
+	transition: background 300ms, color 300ms, box-shadow 300ms, transform 300ms;
+
+}
+#prendre:hover {
+	background: lighten(#29AD29, 15);
+	color: $accent;
+	box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.4);
+	font-weight: bold;
+	transform: scale(1.15);
+	border-radius: 30px;
+	transition: background 300ms, color 300ms, box-shadow 300ms, transform 300ms;
+
+}
+
+.corps {
+	position:absolute;
+	top:200px;
 
 }
 #prendre:hover {
