@@ -3,13 +3,14 @@ $accent: #086AD0;
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100);
 body {
 	background: linear-gradient(to bottom, lighten($main, 30), $main) no-repeat;
-	height: 100vh;
+	padding-top: 8vh;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	font-family: "Roboto", sans-serif;
 	flex-direction: column;
-	overflow: hidden;
+	overflow: auto;
 }
 
 h1 {
@@ -31,7 +32,7 @@ h1 {
 	transition:flex-direction 800ms;
 }
 
-container {
+.container {
 	//background: #fff;
 	display: flex;
 	align-items: center;
@@ -97,9 +98,11 @@ container {
 }
 
 .corps {
-	position:absolute;
-	top:200px;
-
+	width:70%;
+	margin:auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 #prendre:hover {
 	background: lighten(#7DE329, 15);
