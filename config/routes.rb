@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :meets
+      resources :my_unavailabilities
+      get 'my_bookings' => 'meets#my_bookings', as: :my_bookings
+      root to: 'meets#index'
+    end
 
 resources :meets, except: [:edit, :update]
 
-namespace :admin do
-    resources :meets, except: [:index]
-    resources :my_unavailabilities
-    get 'meets' => 'meets#my_bookings', as: :my_bookings
-  end
 
   get 'my_bookings' => 'meets#my_bookings', as: :my_bookings
 
