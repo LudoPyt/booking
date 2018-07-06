@@ -104,14 +104,8 @@ h1 {
 	flex-direction: column;
 	justify-content: center;
 }
-#prendre:hover {
-	background: lighten(#7DE329, 15);
-	color: #fff;
-	box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.4);
-	transform: scale(1.15);
-	border-radius: 30px;
 
-}
+
 
 @media screen and (max-width:900px) {
 	container {

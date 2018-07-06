@@ -1,7 +1,8 @@
 <div id="bg">
   <ul>
-    <li data-xcoord="0px" class="active">Calendrier</li>
-    <li data-xcoord="300px">Mes Rendez-vous</li>
+
+    <li data-xcoord="0px" class="active"><%= link_to "Calendrier", root_path  %></li>
+    <li data-xcoord="300px"><%= link_to "Mes Rendez-Vous", my_bookings_path  %></li>
     <li data-xcoord="300px">
         <% if user_signed_in? %>
         <%= link_to t(".sign_out", default: "Déconnecter"), destroy_user_session_path, method: :delete %>

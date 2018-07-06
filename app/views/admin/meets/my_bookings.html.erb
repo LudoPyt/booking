@@ -1,7 +1,7 @@
 <div class="corps">
   <h1>Mes rendez-vous</h1>
   <div class="text-center">
-    <%= link_to "Prendre un autre rdv", new_meet_path, class: "btn btn-primary mt-4 mb-3 w-50 text-center", id: "prendre" %>
+    <%= link_to "Prendre un autre rdv", new_admin_meet_path, class: "btn btn-primary mt-4 mb-3 w-50 text-center", id: "prendre" %>
   </div>
   <h3 class="text-center"> Voici la liste des rendez-vous que vous avez.</h3>
   <% @meets.each do |meet| %>
