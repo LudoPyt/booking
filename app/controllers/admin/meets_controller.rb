@@ -2,6 +2,8 @@ class Admin::MeetsController < ApplicationController
 before_action :require_admin
 
   def index
+    
+    @meets= Meet.all
   end
 
   def my_bookings
@@ -34,7 +36,7 @@ before_action :require_admin
   def update
     @meet = Meet.find(params[:id])
     @meet.update(meet_params)
-    redirect_to admin_meet_path
+    redirect_to [:admin,@meet]
   end
 
   def destroy

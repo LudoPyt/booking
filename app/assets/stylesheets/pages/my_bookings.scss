@@ -21,6 +21,7 @@ h1 {
 	text-align: center;
 	font-size: 3.3em;
 	margin: 0;
+	margin-top: 20px;
 	white-space: nowrap;
 	display: flex;
 	justify-content: center;
@@ -105,7 +106,13 @@ h1 {
 	justify-content: center;
 }
 
+.rdv {
+	color: black;
 
+}
+.rdv:hover {
+	color: black;
+}
 
 @media screen and (max-width:900px) {
 	container {
