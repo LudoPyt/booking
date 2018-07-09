@@ -1,17 +1,23 @@
-
 <div id="bg">
   <ul>
 
-    <li >
-      <% if current_user.admin? %>
+    <li>
+      <% if current_user && current_user.admin? %>
       <%= link_to "Calendrier", admin_root_path  %>
       <% else %>
       <%= link_to "Calendrier", root_path  %>
       <% end %>
       </li>
 
-    <li ><%= link_to "Mes Rendez-Vous", my_bookings_path  %></li>
-    <li >
+    <li>
+        <% if current_user && current_user.admin? %>
+        <%= link_to "Mes Rendez-Vous", admin_my_bookings_path  %>
+        <% else %>
+        <%= link_to "Mes Rendez-Vous", my_bookings_path  %>
+        <%end %>
+      </li>
+
+    <li>
         <% if user_signed_in? %>
         <%= link_to t(".sign_out", default: "Déconnecter"), destroy_user_session_path, method: :delete %>
       <% else %>
@@ -20,5 +26,3 @@
     </li>
   </ul>
 </div>
-
-
