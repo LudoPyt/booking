@@ -1,0 +1,16 @@
+<div class="corps">
+  <h1>Mes rendez-vous</h1>
+  <div class="text-center">
+    <%= link_to "Prendre un autre rdv", new_meet_path, class: "btn btn-primary mt-4 mb-3 w-30 text-center", id: "prendre" %>
+  </div>
+  <h3 class="text-center"> Voici la liste des rendez-vous que vous avez.</h3>
+  <% @meets.each do |meet| %>
+    <%= link_to meet_path(meet.id), class:"rdv" do %>
+    	<div class="button w-50 mx-auto">
+          <h4 class="text-center">
+            <%= meet.date %>
+         </h4>
+     </div>
+    <% end %>
+  <% end %>
+</div>

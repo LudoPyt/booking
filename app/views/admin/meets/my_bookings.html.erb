@@ -1,0 +1,21 @@
+<div class="corps">
+  <h1>Mes rendez-vous</h1>
+  <div class="text-center">
+    <%= link_to "Prendre un autre rdv", new_admin_meet_path, class: "btn btn-primary mt-4 mb-3 w-30 text-center", id: "prendre" %>
+  </div>
+  <h3 class="text-center"> Voici la liste des rendez-vous que vous avez.</h3>
+  <% @meets.each do |meet| %>
+    <div class="button w-50 mx-auto">
+    <%= link_to admin_meet_path(meet.id), class:"rdv" do %>
+          <h4 class="text-center">
+            <% if current_user.first_name == meet.user.first_name && current_user.last_name == meet.user.last_name %>
+              <%= meet.first_name %> <%= meet.last_name %>
+            <% else %>
+              <%= meet.user.first_name %> <%= meet.user.last_name %>
+            <% end %>
+          </h4>
+          <p class="text-center"><%= meet.date %></p>
+    	</div>
+    <% end %>
+  <% end %>
+</div>
