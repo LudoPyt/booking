@@ -1,7 +1,12 @@
-<h1>Edit a New Unavailability</h1>
-  <%= simple_form_for @meet do |f| %>
+<div class="corps">
+  <container>
+    <h1>Modifier une indisponibilité</h1>
+      <%= simple_form_for [:admin,@meet] do |f| %>
 
-    <%= f.input :date%>
-    <%= f.button :submit %>
 
-  <% end %>
+        <%= f.input :date%>
+        <%= f.button :submit, "Modifier votre indisponibilité", class: "btn btn-danger mt-4 mb-3 w-30 text-center", id: "annuler" %>
+
+      <% end %>
+    </container>
+</div>
