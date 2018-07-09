@@ -2,7 +2,7 @@
   <ul>
 
     <li >
-      <% if ???? %>
+      <% if current_user.admin? %>
       <%= link_to "Calendrier", admin_root_path  %>
       <% else %>
       <%= link_to "Calendrier", root_path  %>
