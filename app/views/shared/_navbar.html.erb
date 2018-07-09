@@ -9,6 +9,12 @@
       <% end %>
       </li>
 
+    <% if current_user && current_user.admin? %>
+      <li>
+        <%= link_to "Mes Indisponibilités", admin_my_unavailabilities_path%>
+      </li>
+    <%end%>
+    
     <li>
         <% if current_user && current_user.admin? %>
         <%= link_to "Mes Rendez-Vous", admin_my_bookings_path  %>
