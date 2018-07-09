@@ -2,7 +2,7 @@ class Admin::MeetsController < ApplicationController
 before_action :require_admin
 
   def index
-
+    
     @meets= Meet.all
   end
 
