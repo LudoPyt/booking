@@ -15,6 +15,7 @@ before_action :require_admin
 
   def create
     @meet = Meet.new(meet_params)
+    @meet.user = current_user
     if @meet.save
       redirect_to admin_my_unavailabilities_path
     else
@@ -42,7 +43,7 @@ before_action :require_admin
   private
 
   def meet_params
-    params.require(:meet).permit(:date)
+    params.require(:meet).permit(:date, :reason)
   end
 
   def require_admin

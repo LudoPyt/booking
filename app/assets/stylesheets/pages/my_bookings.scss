@@ -77,24 +77,24 @@ h1 {
 	font-size: 4em;
 
 }
-#annuler:hover {
+#cancel:hover {
 	background: lighten(#F5A431, 15);
 	color: #D5323A;
 	font-weight: bold;
 	box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.4);
 	transform: scale(1.15);
 	border-radius: 30px;
-	transition: background 300ms, color 300ms, box-shadow 300ms, transform 300ms;
+	transition: 0.5s ease-in;
 
 }
-#prendre:hover {
+#take:hover {
 	background: lighten(#29AD29, 15);
 	color: $accent;
 	box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.4);
 	font-weight: bold;
 	transform: scale(1.15);
 	border-radius: 30px;
-	transition: background 300ms, color 300ms, box-shadow 300ms, transform 300ms;
+	transition: 0.5s ease-in;
 
 }
 
@@ -106,11 +106,11 @@ h1 {
 	justify-content: center;
 }
 
-.rdv {
+.bookings {
 	color: black;
 
 }
-.rdv:hover {
+.bookings:hover {
 	color: black;
 }
 

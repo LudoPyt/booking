@@ -4,7 +4,7 @@
   <div class="text-center">
     <h1>Mon rendez-vous du</h1>
   </div>
-  <container>
+
 
       <div class="button">
           <h2>
@@ -17,11 +17,10 @@
           <h3><%= @meet.date %></h3>
         <div class= "d-flex">
           <%= link_to "Annuler", admin_meet_path(@meet.id), method: :delete, class: "btn
-          btn-danger ml-5 mr-5 w-40", id: "annuler", data: { confirm: 'Souhaitez vous vraiment annuler?' } %>
+          btn-danger ml-5 mr-5 w-40", id: "cancel", data: { confirm: 'Souhaitez vous vraiment annuler?' } %>
           <%= link_to "Modifier", edit_admin_meet_path(@meet.id), class: "btn
-          btn-primary ml-5 mr-5 w-40", id: "prendre", data: { confirm: 'Souhaitez vous vraiment modifier?' } %>
+          btn-primary ml-5 mr-5 w-40", id: "take", data: { confirm: 'Souhaitez vous vraiment modifier?' } %>
         </div>
     </div>
 
-  </container>
 </div>
