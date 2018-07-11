@@ -2,26 +2,14 @@
   <div class="text-center">
     <h1>Calendrier</h1>
   </div>
-  <div class="container">
-    <%= link_to "Prendre un rdv", new_admin_meet_path, class: "btn btn-primary text-center" %>
-    <%= link_to "Mes indisponibilités", admin_my_unavailabilities_path, class: "btn btn-warning text-center" %>
+
+      <div class= " justify-content d-flex">
+        <%= link_to "Prendre un rdv", new_admin_meet_path, class: "btn
+        btn-primary ml-5 mr-5 w-50", id: "take" %>
+        <%= link_to "Ajouter une indisponibilité", new_admin_my_unavailability_path,  class: "btn
+        btn-warning ml-5 mr-5 w-50", id: "cancel" %>
+      </div>
 
 
-        <!-- <% @meets.each do |meet| %>
-        <%= link_to admin_meet_path(meet.id) do %>
-          <div class="col-12">
-            <div class="shadow bg-white rounded p-6 m-6 ">
-              <h2 class="text-center"><%= meet.date %></h2>
-                <h3 class="text-center">
-                  <% if current_user.first_name == meet.user.first_name && current_user.last_name == meet.user.last_name %>
-                    <%= meet.first_name %> <%= meet.last_name %>
-                  <% else %>
-                    <%= meet.user.first_name %> <%= meet.user.last_name %>
-                  <% end %>
-                </h3>
-              </div>
-            </div>
-            <% end %>
-          <% end %> -->
-    </div>
+
 </div>

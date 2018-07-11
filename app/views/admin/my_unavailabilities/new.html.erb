@@ -1,12 +1,12 @@
 <div class="corps">
-  <container>
+
     <h1>Indisponible du</h1>
-      <%= simple_form_for @meet, url: admin_meets_path do |f| %>
+      <%= simple_form_for @meet, url: admin_my_unavailabilities_path do |f| %>
 
-
+        <%= f.input :reason %>
         <%= f.input :date%>
-        <%= f.button :submit, "Je ne suis pas disponible", class: "btn btn-primary mt-4 mb-3 w-30 text-center", id: "prendre" %>
+        <%= f.button :submit, "Ajouter une indisponibilité", class: "btn btn-warning mt-4 mb-3 w-30 text-center", id: "cancel" %>
 
       <% end %>
-    </container>
+
 </div>

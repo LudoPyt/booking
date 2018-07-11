@@ -1,19 +1,10 @@
-<div class="text-center">
-  <h1>Calendrier</h1>
+<div class="corps">
+  <div class="text-center">
+    <h1>Calendrier</h1>
+  </div>
+  <div clas="mx-auto">
+    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=g5ihq6khvg460jleb6upqlt9pg%40group.calendar.google.com&amp;color=%23875509&amp;ctz=Europe%2FParis" style="border-width:0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
+
+  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center", id: "take" %>
+  </div>
 </div>
-<container>
-
-  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center", id: "prendre" %>
-
-
-
-    <!-- <% @meets.each do |meet| %>
-         <div class="button" id="button_all">
-            <h2 class="text-center"><%= meet.date %></h2>
-
-              <% if meet.user == current_user %>
-              <%= link_to "Details", meet_path(meet.id), class: "btn btn-primary text-center" %>
-              <% end %>
-          </div>
-        <% end %> -->
-  </container>

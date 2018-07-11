@@ -1,20 +1,20 @@
-<div class="text-center">
+
+<div class="corps">
   <h1>Mes indisponibilités</h1>
-</div>
-<div class="container">
-  <%= link_to "Je suis pas disponible", new_admin_my_unavailability_path, class: "btn btn-primary text-center" %>
-
-
-
-      <% @meets.each do |meet| %>
-      <%= link_to admin_my_unavailability_path(meet.id) do %>
-        <div class="col-12">
-          <div class="shadow bg-white rounded p-6 m-6 ">
-            <h2 class="text-center"><%= meet.date %></h2>
-
-            </div>
-          </div>
-          <% end %>
-        <% end %>
-
+  <div class="text-center">
+    <%= link_to "Ajouter une indisponibilité", new_admin_my_unavailability_path, class: "btn btn-warning mt-4 mb-3 w-30 text-center", id: "cancel" %>
+  </div>
+  <h3 class="text-center"> Vous ne pourrez pas être là durant la période du :</h3>
+  <% @meets.each do |meet| %>
+    <% if !meet.reason.nil?%>
+      <div class="button w-50 mx-auto">
+      <%= link_to admin_my_unavailability_path(meet.id), class:"bookings" do %>
+            <h4 class="text-center">
+              <%= meet.date %>
+            </h4>
+            <p class="text-center"> <%= meet.reason%> </p>
+      </div>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>

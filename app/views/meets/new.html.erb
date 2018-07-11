@@ -1,12 +1,12 @@
 <div class="corps">
-  <container>
+
     <h1>Prendre un Rendez-vous</h1>
       <%= simple_form_for @meet, url: meets_path do |f| %>
 
 
         <%= f.input :date%>
-        <%= f.button :submit, "Réserver cette séance", class: "btn btn-primary mt-4 mb-3 w-30 text-center", id: "prendre" %>
+        <%= f.button :submit, "Réserver cette séance", class: "btn btn-primary mt-4 mb-3 w-30 text-center", id: "take" %>
 
       <% end %>
-    </container>
+
 </div>

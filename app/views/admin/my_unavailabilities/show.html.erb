@@ -3,17 +3,16 @@
   <div class="text-center">
     <h1>Je ne suis pas disponible du</h1>
   </div>
-  <container>
+
 
       <div class="button">
         <h2><%= @meet.date %></h2>
         <div class= "d-flex">
-          <%= link_to "Annuler", admin_meet_path(@meet.id), method: :delete, class: "btn
-          btn-danger ml-5 mr-5 w-30", id: "annuler", data: { confirm: 'Souhaitez vous vraiment annuler?' } %>
-          <%= link_to "Modifier", edit_admin_meet_path(@meet.id), class: "btn
-          btn-primary ml-5 mr-5 w-30", id: "prendre", data: { confirm: 'Souhaitez vous vraiment modifier?' } %>
+          <%= link_to "Annuler", admin_my_unavailability_path(@meet.id), method: :delete, class: "btn
+          btn-danger ml-5 mr-5 w-30", id: "cancel", data: { confirm: 'Souhaitez vous vraiment annuler?' } %>
+          <%= link_to "Modifier", edit_admin_my_unavailability_path(@meet.id), class: "btn
+          btn-primary ml-5 mr-5 w-30", id: "take", data: { confirm: 'Souhaitez vous vraiment modifier?' } %>
         </div>
       </div>
 
-  </container>
 </div>
