@@ -14,7 +14,7 @@
         <%= link_to "Mes Indisponibilités", admin_my_unavailabilities_path%>
       </li>
     <%end%>
-    
+
     <li>
         <% if current_user && current_user.admin? %>
         <%= link_to "Mes Rendez-Vous", admin_my_bookings_path  %>
@@ -22,6 +22,11 @@
         <%= link_to "Mes Rendez-Vous", my_bookings_path  %>
         <%end %>
       </li>
+
+      <li>
+        <%= link_to "Mon Profil", edit_user_registration_path %>
+      </li>
+
 
     <li>
         <% if user_signed_in? %>
