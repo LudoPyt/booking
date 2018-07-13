@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
+gem 'oauth2'
+gem 'google-api-client', require: 'google/apis/calendar_v3'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'figaro'
