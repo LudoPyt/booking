@@ -11,7 +11,7 @@
   background: -ms-linear-gradient(top,  #38a8d1 0%,#34bc9a 36%,#34bc9a 57%,#B754F5 100%);
   background: linear-gradient(to bottom,  #38a8d1 0%,#34bc9a 36%,#34bc9a 57%,#B754F5 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38a8d1', endColorstr='#B754F5',GradientType=0 );
-}
+
 
 ul {
   display:flex;
@@ -34,6 +34,7 @@ ul {
     transition: 0.3s;
     &:hover {
       background:#8C02E2;
+      }
     }
   }
 }

@@ -1,0 +1,19 @@
+<div class="corps">
+  <div class="text-center">
+    <h1>Calendrier</h1>
+  </div>
+  <div clas="mx-auto">
+
+    <ul>
+      <% @calendar_list.items.each do |calendar| %>
+        <li><%= calendar.summary %> (<%= calendar.id %>)</li>
+      <% end %>
+    </ul>
+
+  
+
+
+
+  <%= link_to "Prendre un rdv", new_meet_path, class: "btn btn-primary text-center", id: "take" %>
+  </div>
+</div>
