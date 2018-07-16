@@ -20,7 +20,6 @@ class MeetsController < ApplicationController
 
     retry
     @meets=Meet.all
-    
   end
 
   def new_event

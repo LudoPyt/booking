@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/callback', to: 'meets#callback', as: 'callback'
   get 'my_bookings' => 'meets#my_bookings', as: :my_bookings
   get '/events/:calendar_id', to: 'meets#events', as: 'events', calendar_id: /[^\/]+/
-  post '/events/:calendar_id', to: 'meets#new_event', as: 'new_event', calendar_id: /[^\/]+/
+  post '/events/:calendar_id', to: 'meets#new_event', as: 'new_event', calendar_id: /[^\/]+/ 
 
   devise_for :users
 
