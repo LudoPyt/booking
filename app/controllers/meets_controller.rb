@@ -1,4 +1,6 @@
 class MeetsController < ApplicationController
+
+
   def redirect
    client = Signet::OAuth2::Client.new(client_options)
 
@@ -20,7 +22,6 @@ class MeetsController < ApplicationController
 
     retry
     @meets=Meet.all
-    
   end
 
   def new_event
