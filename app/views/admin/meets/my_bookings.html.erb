@@ -5,17 +5,19 @@
   </div>
   <h3 class="text-center"> Voici la liste des rendez-vous que vous avez.</h3>
   <% @meets.each do |meet| %>
-    <div class="button w-50 mx-auto">
-    <%= link_to admin_meet_path(meet.id), class:"bookings" do %>
-          <h4 class="text-center">
-            <% if current_user.first_name == meet.user.first_name && current_user.last_name == meet.user.last_name %>
-              <%= meet.first_name %> <%= meet.last_name %>
-            <% else %>
-              <%= meet.user.first_name %> <%= meet.user.last_name %>
-            <% end %>
-          </h4>
-          <p class="text-center"><%= meet.date %></p>
-    	</div>
+    <% if meet.reason.nil? %>
+      <div class="button w-50 mx-auto">
+        <%= link_to admin_meet_path(meet.id), class:"bookings" do %>
+            <h4 class="text-center">
+              <% if current_user.first_name == meet.user.first_name && current_user.last_name == meet.user.last_name %>
+                <%= meet.first_name %> <%= meet.last_name %>
+              <% else %>
+                <%= meet.user.first_name %> <%= meet.user.last_name %>
+              <% end %>
+            </h4>
+            <p class="text-center"><%= meet.date %></p>
+          <% end %>
+        </div>
     <% end %>
   <% end %>
 </div>

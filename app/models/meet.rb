@@ -1,4 +1,4 @@
 class Meet < ApplicationRecord
   belongs_to :user
-  validates :date, :reason, presence:true
+  validates :date, presence:true
 end
