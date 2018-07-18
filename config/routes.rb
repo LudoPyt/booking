@@ -3,17 +3,17 @@ Rails.application.routes.draw do
       resources :meets
       resources :my_unavailabilities
       get 'my_bookings' => 'meets#my_bookings', as: :my_bookings
-      root to: 'meets#calendars'
+      root to: 'meets#index'
     end
 
   resources :meets, except: [:edit, :update]
 
-  get '/calendars', to: 'meets#calendars', as: 'calendars'
-  get '/redirect', to: 'meets#redirect', as: 'redirect'
-  get '/callback', to: 'meets#callback', as: 'callback'
-  get 'my_bookings' => 'meets#my_bookings', as: :my_bookings
-  get '/events/:calendar_id', to: 'meets#events', as: 'events', calendar_id: /[^\/]+/
-  post '/events/:calendar_id', to: 'meets#new_event', as: 'new_event', calendar_id: /[^\/]+/
+  # get '/calendars', to: 'meets#calendars', as: 'calendars'
+  # get '/redirect', to: 'meets#redirect', as: 'redirect'
+  # get '/callback', to: 'meets#callback', as: 'callback'
+  # get 'my_bookings' => 'meets#my_bookings', as: :my_bookings
+  # get '/events/:calendar_id', to: 'meets#events', as: 'events', calendar_id: /[^\/]+/
+  # post '/events/:calendar_id', to: 'meets#new_event', as: 'new_event', calendar_id: /[^\/]+/
 
   devise_for :users
 
